@@ -5,7 +5,6 @@ using UnityEngine;
 public class Moving : MonoBehaviour {
 
 	static float speed = 1f, v = 8f;
-
 	void Update () {
 		float hor = Input.GetAxis("Horizontal"), ver = Input.GetAxis("Vertical");
 		if (hor > 0) {

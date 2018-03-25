@@ -5,7 +5,7 @@ using UnityEngine;
 public class Destroy : MonoBehaviour {
 
 	public float lftime = 2f;
-
+	Spawn sp = new Spawn();
 	// Update is called once per frame
 	void Update () {
 		lftime -= Time.deltaTime;
@@ -15,5 +15,6 @@ public class Destroy : MonoBehaviour {
 	}
 	void Des(){
 		Destroy (this.gameObject);
+		sp.Bombnumcur--;
 	}
 }
