@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MoreBoom : MonoBehaviour {
 
-	public int Bombmax = 1;
-
+	public static int Bombmax = 1;
+	void Update(){
+	
+	
+	}
 }

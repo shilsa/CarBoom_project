@@ -5,10 +5,9 @@ public class Spawn : MonoBehaviour {
 
 	public Transform sPos;
 	public GameObject sOb;
-	public int Bombnumcur = 0;
-	MoreBoom mb = new MoreBoom();
+	public static int Bombnumcur = 0;
 	void Update () {
-		if(Bombnumcur < mb.Bombmax){
+		if(Bombnumcur < MoreBoom.Bombmax){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Instantiate (sOb, sPos.position, sPos.rotation);
 			Bombnumcur++;

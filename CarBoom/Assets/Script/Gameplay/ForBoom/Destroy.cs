@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour {
 
-	public float lftime = 2f;
-	Spawn sp = new Spawn();
+	public float lftime = 1f;
+
 	// Update is called once per frame
 	void Update () {
-		lftime -= Time.deltaTime;
+		lftime -= Time.deltaTime*3.5f;
 		if (lftime <= 0) {
 			Des ();
 		}
 	}
 	void Des(){
 		Destroy (this.gameObject);
-		sp.Bombnumcur--;
+		Spawn.Bombnumcur--;
 	}
 }
