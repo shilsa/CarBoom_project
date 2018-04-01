@@ -6,13 +6,15 @@ public class Spawn : MonoBehaviour {
 
 	public Transform sPos;
 	public GameObject sOb;
-	public int Bomnum = 1;
+	public static int Bombnumcur = 0;
 	
 	// Update is called once per frame
 	void Update () {
-		print (Input.GetKey(KeyCode.Space));
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			Instantiate(sOb, sPos.position,sPos.rotation);
+		if(Bombnumcur < MoreBoom.Bombmax){
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				Instantiate (sOb, sPos.position, sPos.rotation);
+				Bombnumcur++;
+			}
 		}
 	}
 }
