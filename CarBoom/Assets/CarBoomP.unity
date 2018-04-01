@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -176,9 +176,9 @@ BoxCollider:
   m_GameObject: {fileID: 42102170}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &42102173
 MeshFilter:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sPos: {fileID: 42102174}
-  sOb: {fileID: 1108428904111136, guid: 893e6ee5475aa0d42a1dc2379dbe7877, type: 2}
+  sOb: {fileID: 1871853209794494, guid: 56f992238c112644395916bc9cf8a3a9, type: 2}
   Bomnum: 1
 --- !u!1 &336456075
 GameObject:
