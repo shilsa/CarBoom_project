@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour {
 
-	public float lftime = 2f;
+	public float lftime = 1f;
 
 	// Update is called once per frame
 	void Update () {
-		lftime -= Time.deltaTime;
-		lftime -= Time.deltaTime*3.5f;
+		lftime -= Time.deltaTime*4f;
 		if (lftime <= 0) {
 			Des ();
 		}
