@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
     public Transform expandHor1,expandHor2,expandVer1,expandVer2;
-    float lenghtmax = 3f, counter = 1.5f;
+    public float lenghtmax = 3f, counter = 1.5f;
 	public static bool Isrightlenght = false;
     Vector3 HoriEx = new Vector3(0.5f, 0f, 0f);
     Vector3 VerEx = new Vector3(0f, 0f, 0.5f);
@@ -14,6 +14,7 @@ public class Explosion : MonoBehaviour {
         counter -= Time.deltaTime;
         if (counter <= 0)
         {
+			Isrightlenght = true;
             expand();         
         }
 	}
@@ -38,8 +39,9 @@ public class Explosion : MonoBehaviour {
             expandVer2.localScale += VerEx ;
             expandVer2.localPosition -= VerCenShif;
         }
-		if(expandHor1.localScale.x >= lenghtmax){
-			Isrightlenght = true;
+		if (expandHor1.localScale.x >= lenghtmax) {
+			Isrightlenght = false;
+		
 		}
     }
 }

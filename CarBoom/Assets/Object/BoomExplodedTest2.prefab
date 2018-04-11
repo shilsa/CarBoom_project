@@ -592,3 +592,5 @@ MonoBehaviour:
   expandHor2: {fileID: 4115586270349568}
   expandVer1: {fileID: 4561577876061548}
   expandVer2: {fileID: 4140501894088842}
+  lenghtmax: 3
+  counter: 1.5
