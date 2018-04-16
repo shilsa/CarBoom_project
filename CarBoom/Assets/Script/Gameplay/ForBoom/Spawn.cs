@@ -13,6 +13,7 @@ public class Spawn : MonoBehaviour {
 		if(Bombnumcur < MoreBoom.Bombmax){
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				Instantiate (sOb, sPos.position, sPos.rotation);
+				print (Bombnumcur);
 				Bombnumcur++;
 			}
 		}
