@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 42102171}
   - component: {fileID: 42102176}
   - component: {fileID: 42102175}
-  - component: {fileID: 42102178}
   - component: {fileID: 42102177}
   m_Layer: 0
   m_Name: Cube
@@ -239,18 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sPos: {fileID: 42102174}
-  sOb: {fileID: 1793260468286014, guid: 7bc690e5ff9d4854ba301b884aa46931, type: 2}
---- !u!114 &42102178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 42102170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85374ef823ca54e48850f6643d344b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sOb: {fileID: 1853857641327628, guid: fbba7b58598c16d4690c8119af27cab8, type: 2}
 --- !u!1 &336456075
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,10 +313,10 @@ GameObject:
   m_Component:
   - component: {fileID: 958831171}
   - component: {fileID: 958831170}
-  - component: {fileID: 958831169}
   - component: {fileID: 958831168}
   - component: {fileID: 958831167}
   - component: {fileID: 958831172}
+  - component: {fileID: 958831169}
   m_Layer: 0
   m_Name: MoreB
   m_TagString: Untagged
@@ -385,8 +373,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &958831169
-BoxCollider:
+--- !u!135 &958831169
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -395,7 +383,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &958831170
 MeshFilter:
@@ -518,10 +506,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1866219220}
   - component: {fileID: 1866219219}
-  - component: {fileID: 1866219218}
   - component: {fileID: 1866219217}
   - component: {fileID: 1866219216}
   - component: {fileID: 1866219215}
+  - component: {fileID: 1866219218}
   m_Layer: 0
   m_Name: MoreB (1)
   m_TagString: Untagged
@@ -589,8 +577,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1866219218
-BoxCollider:
+--- !u!135 &1866219218
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -599,7 +587,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1866219219
 MeshFilter:
