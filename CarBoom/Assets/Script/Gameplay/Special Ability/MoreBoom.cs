@@ -5,7 +5,7 @@ public class MoreBoom : MonoBehaviour {
 	public static int Bombmax = 1;
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.name == "Cube") {
+		if (col.gameObject.name == "Car") {
 			Bombmax++;  
 			Destroy (gameObject);
 		}

@@ -11,17 +11,16 @@ public class Rotation : MonoBehaviour {
 	
 
 	void Update () {
-		float hor = Input.GetAxis("Horizontal"), ver = Input.GetAxis("Vertical");
-		if (hor > 0) {
-			transform.Rotate (0f, 90f, 0f);
+		if (Input.GetKey(KeyCode.D)) {
+			transform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
 		} 
-		else if (hor < 0) {
-			transform.Rotate (0f, -90f, 0f);
+		else if (Input.GetKey(KeyCode.A)) {
+			transform.localRotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
 		}
-		if (ver > 0) {
-			transform.Rotate (0f, 0f, 0f);
-		} else if (ver < 0) {
-			transform.Rotate (0f, 180f, 0f);
+		if (Input.GetKey(KeyCode.W)) {
+			transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+		} else if (Input.GetKey(KeyCode.S)) {
+			transform.localRotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
 		}
 	}
 }
