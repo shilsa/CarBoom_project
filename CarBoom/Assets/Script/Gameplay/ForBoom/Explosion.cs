@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
     public Transform expandHor1,expandHor2,expandVer1,expandVer2;
-    public float lenghtmax = 3f, counter = 1.5f;
+	public float lenghtmax = 3f;
 	public static bool trigger = false, IsrightLenght = false;
-    Vector3 HoriEx = new Vector3(0.5f, 0f, 0f);
-    Vector3 VerEx = new Vector3(0f, 0f, 0.5f);
-    Vector3 HoriCenShif = new Vector3(0.25f, 0f, 0f);
-    Vector3 VerCenShif = new Vector3(0f, 0f, 0.25f);
+    Vector3 HoriEx = new Vector3(0.2f, 0f, 0f);
+    Vector3 VerEx = new Vector3(0f, 0f, 0.2f);
+    Vector3 HoriCenShif = new Vector3(0.1f, 0f, 0f);
+    Vector3 VerCenShif = new Vector3(0f, 0f, 0.1f);
     void Update () {
-        counter -= Time.deltaTime;
-        if (counter <= 0)
-        {
-			trigger = true;
-            expand();         
-        }
+            expand(); 
+		if (expandHor1.localScale.x >= lenghtmax) {
+			Destroy (this.gameObject);
+		}
 	}
     void expand()
     {
@@ -39,9 +37,5 @@ public class Explosion : MonoBehaviour {
             expandVer2.localScale += VerEx ;
             expandVer2.localPosition -= VerCenShif;
         }
-		if (expandHor1.localScale.x >= lenghtmax) {
-			trigger = false;
-			IsrightLenght = true;
-		}
     }
 }
