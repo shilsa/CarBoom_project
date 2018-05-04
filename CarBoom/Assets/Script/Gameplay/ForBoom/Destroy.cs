@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour {
 
-	public float lftime = 3f;
-
-	// Update is called once per frame
+	public GameObject Sob;
+	public float lftime = 1f;
 	void Update () {
-		lftime -= Time.deltaTime*4f;
+		lftime -= Time.deltaTime*2f;
 		if (lftime <= 0) {
 			Des ();
 		}
 	}
 	void Des(){
+		Instantiate (Sob, this.transform.position, this.transform.rotation);
 		Destroy (this.gameObject);
 		Spawn.Bombnumcur--;
 	}
