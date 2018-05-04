@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 		
 	}
