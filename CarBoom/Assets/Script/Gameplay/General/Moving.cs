@@ -7,16 +7,15 @@ public class Moving : MonoBehaviour {
 	static float v = 8f;
 
 	void Update () {
-		float hor = Input.GetAxis("Horizontal"), ver = Input.GetAxis("Vertical");
-		if (hor > 0) {
+		if (Input.GetKey(KeyCode.D)) {
 			transform.Translate (Time.deltaTime * v, 0f, 0f);
 		} 
-		else if (hor < 0) {
+		else if (Input.GetKey(KeyCode.A)) {
 			transform.Translate (Time.deltaTime*v*(-1), 0f, 0f);
 		}
-		if (ver > 0) {
+		if (Input.GetKey(KeyCode.W)) {
 			transform.Translate (0f, 0f, Time.deltaTime * v);
-		} else if (ver < 0) {
+		} else if (Input.GetKey(KeyCode.S)) {
 			transform.Translate (0f, 0f, Time.deltaTime * v*(-1));
 		}
 	}
