@@ -11,7 +11,6 @@ public class AudioManScript : MonoBehaviour {
         dead = Resources.Load<AudioClip>("imded");
         kill = Resources.Load<AudioClip>("enemyded");
         powerup = Resources.Load<AudioClip>("powup");
-        car = Resources.Load<AudioClip>("drive");
         auSrc = GetComponent<AudioSource>();
         
 		
@@ -34,9 +33,7 @@ public class AudioManScript : MonoBehaviour {
             case ("powup"):
                 auSrc.PlayOneShot(powerup);
                 break;
-            case ("drive"):
-                auSrc.PlayOneShot(car);
-                break;
+            
 
 
 
