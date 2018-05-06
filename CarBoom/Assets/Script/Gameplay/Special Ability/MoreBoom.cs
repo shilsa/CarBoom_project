@@ -6,7 +6,8 @@ public class MoreBoom : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.name == "Car") {
-			Bombmax++;  
+            AudioManScript.PlaySound("powup");
+            Bombmax++;  
 			Destroy (gameObject);
 		}
 	}
