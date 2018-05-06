@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
     public Transform expandHor1,expandHor2,expandVer1,expandVer2;
-	public float lenghtmax = 3f;
+	public static float lenghtmax = 3f;
 	public static bool trigger = false, IsrightLenght = false;
     Vector3 HoriEx = new Vector3(0.2f, 0f, 0f);
     Vector3 VerEx = new Vector3(0f, 0f, 0.2f);
