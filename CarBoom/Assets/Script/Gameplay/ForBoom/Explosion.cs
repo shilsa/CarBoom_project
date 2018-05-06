@@ -6,7 +6,6 @@ public class Explosion : MonoBehaviour {
     public Transform expandHor1,expandHor2,expandVer1,expandVer2;
 	public float lenghtmax = 3f;
 	public static bool H1hit = false, H2hit = false, V1hit = false, V2hit = false;
-
     Vector3 HoriEx = new Vector3(0.2f, 0f, 0f);
     Vector3 VerEx = new Vector3(0f, 0f, 0.2f);
     Vector3 HoriCenShif = new Vector3(0.1f, 0f, 0f);
