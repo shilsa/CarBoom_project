@@ -5,14 +5,14 @@ using UnityEngine;
 public class Rrr : MonoBehaviour
 {
     public static AudioClip car;
-    static AudioSource auSrc;
+    static AudioSource audSrc;
 
     // Use this for initialization
     void Start()
     {
         
         car = Resources.Load<AudioClip>("Rrr");
-        auSrc = GetComponent<AudioSource>();
+        audSrc = GetComponent<AudioSource>();
 
 
     }
@@ -28,7 +28,7 @@ public class Rrr : MonoBehaviour
         {
           
             case ("Rrr"):
-                auSrc.PlayOneShot(car);
+                audSrc.PlayOneShot(car);
                 break;
 
 
