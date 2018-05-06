@@ -55,16 +55,16 @@ namespace Assets.Script.Gameplay.AI
             if (az < 0)
                 az = 0;
             bfs();
-            Debug.Log("distance " + distance[target.getA(), target.getB()]);
+      //      Debug.Log("distance " + distance[target.getA(), target.getB()]);
             if (distance[target.getA(), target.getB()] <= 20)
             {
                 attackMove();
-                Debug.Log("Attack");
+//                Debug.Log("Attack");
             }
             else
             {
                 randomMove();
-                Debug.Log("Random");
+//                Debug.Log("Random");
             }
         }
         void bfs()
@@ -165,7 +165,7 @@ namespace Assets.Script.Gameplay.AI
 
         void attackMove()
         {
-            Debug.Log("stack " + s.Count);
+//            Debug.Log("stack " + s.Count);
 
             if (s.Count > 0)
             {
@@ -181,7 +181,7 @@ namespace Assets.Script.Gameplay.AI
                     transform.Translate(0f, 0f, Time.deltaTime * v);
                 else if (z == -1)
                     transform.Translate(0f, 0f, Time.deltaTime * -v);
-                Debug.Log("x " + x + " z " + z);
+//                Debug.Log("x " + x + " z " + z);
             }
         }
         void randomMove()
