@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Border : MonoBehaviour {
 
-	float[,] UnBrePo = new float[100,100];
+	public static float[,] UnBrePo = new float[100,100];
 	// Unbreakable is 1
+	// Breakable is 2
 	public GameObject Sob;
 	public Transform Spos;
 	void Start () {
@@ -23,7 +24,7 @@ public class Border : MonoBehaviour {
 					int corx = (int) ((orix + 1) / 2);
 					int corz = (int) ((oriz + 1) / 2);
 					UnBrePo [corx,corz] = 1;
-					Debug.Log ("The Bor at " + corx + " " +corz+" has the condition of:  "+UnBrePo [corx,corz]);
+	//				Debug.Log ("The Bor at " + corx + " " +corz+" has the condition of:  "+UnBrePo [corx,corz]);
 				} 
 				else if (j == 0 || j == 15) {
 					Vector3 spos = new Vector3 (orix, Spos.position.y, oriz);
@@ -31,7 +32,7 @@ public class Border : MonoBehaviour {
 					int corx = (int) ((orix + 1) / 2);
 					int corz = (int) ((oriz + 1) / 2);
 					UnBrePo [corx,corz] = 1;
-					Debug.Log ("The Bor at " + corx + " " +corz+" has the condition of:  "+UnBrePo [corx,corz]);
+		//			Debug.Log ("The Bor at " + corx + " " +corz+" has the condition of:  "+UnBrePo [corx,corz]);
 				}
 				else if(temp == 0 && i != 14 && temp2 < 6){
 					if (temp2 == 0) {
@@ -43,13 +44,14 @@ public class Border : MonoBehaviour {
 					int corx = (int) ((neworix - 1f) / 2);
 					int corz = (int) ((oriz + 1f) / 2);
 					UnBrePo [corx,corz] = 1;
-					Debug.Log ("The Bor at " + corx + " " +corz+" has the condition of:  "+UnBrePo [corx,corz]);
+				//	Debug.Log ("The Bor at " + corx + " " +corz+" has the condition of:  "+UnBrePo [corx,corz]);
 					temp2++;
 				}
 				orix += 2.0f;
 			}
 			oriz += 2.0f;
 		}
+		SpawnBreakBor.BorisDone = true;
 	}
 
 	void Update () {
