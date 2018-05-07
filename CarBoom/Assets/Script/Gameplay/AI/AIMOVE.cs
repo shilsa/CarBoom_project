@@ -32,7 +32,10 @@ namespace Assets.Script.Gameplay.AI
             map = new int[MAX, MAX];
             for (int i = 1; i < MAX - 1; i++)
                 for (int j = 1; j < MAX - 1; j++)
-                    map[i, j] = 0;
+                    if (i % 2 == 0 && j % 2 == 0)
+                        map[i, j] = 1;
+                    else
+                        map[i, j] = 0;
 
        
 
@@ -45,6 +48,7 @@ namespace Assets.Script.Gameplay.AI
         void Update()
         {
             ran = new System.Random();
+            map = Border.UnBrePo;
             Vector3 bar = transform.position;
             target = new Combine((int)(targ.localPosition.x ) / 2, (int)(targ.localPosition.z ) / 2);
             float hor = Input.GetAxis("Horizontal"), ver = Input.GetAxis("Vertical");
@@ -77,7 +81,7 @@ namespace Assets.Script.Gameplay.AI
                 az = 0;
             bfs();
       //      Debug.Log("distance " + distance[target.getA(), target.getB()]);
-            if (distance[target.getA(), target.getB()] <= 20)
+            if (distance[target.getA(), target.getB()] <= 5)
             {
                 attackMove();
 //                Debug.Log("Attack");
