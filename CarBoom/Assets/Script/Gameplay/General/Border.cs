@@ -16,7 +16,7 @@ public class Border : MonoBehaviour {
             {
                 for (int j = 0; j < 16; j++)
                 {
-                    Vector3 Space = new Vector3((float)(i * 2 + 1), 1f, (float)(j * 2 + 1));
+					Vector3 Space = new Vector3((float)(i * 2 + 1), 1f, (float)(j * 2 + 1));
                     if (i == 0 || i == 14 || j == 0 || j == 14)
                     {
                         Instantiate(Sob, Space, Spos.rotation);

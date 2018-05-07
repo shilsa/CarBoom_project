@@ -14,15 +14,21 @@ public class SpawnBreakBor : MonoBehaviour {
 	int maxbor;
 
 	void Start () {
-        int temp = Random.Range(20, 50);
+        int temp = Random.Range(10, 20);
         maxbor = temp;
+		Border.UnBrePo [1, 13] = 1;
+		Border.UnBrePo [13, 1] = 1;
+		Border.UnBrePo [1, 1] = 1;
+		Border.UnBrePo [13, 13] = 1;
+		Border.UnBrePo [2, 14] = 1;
+		Border.UnBrePo [3, 14] = 1;
 	}
 
 	void Update () {
 		if(BorisDone){
-				int xcor = Random.Range (2, xmax);
-				int zcor = Random.Range (2, zmax);
-				Vector3 borpo = new Vector3 ((float)(xcor *2+1), 1f, (float)(zcor*2+1));
+				int xcor = Random.Range (1, xmax);
+				int zcor = Random.Range (1, zmax);
+			Vector3 borpo = new Vector3 ((float)(xcor *2+1), 1f, (float)(zcor*2+1));
                 if (Border.UnBrePo[xcor, zcor] == 1) ;
                 else if (counter < maxbor)
                 {
@@ -34,6 +40,12 @@ public class SpawnBreakBor : MonoBehaviour {
                 }
                 else if (counter == maxbor)
                 {
+				Border.UnBrePo [1, 13] = 0;
+				Border.UnBrePo [13, 1] = 0;
+				Border.UnBrePo [1, 1] = 0;
+				Border.UnBrePo [13, 13] = 0;
+				Border.UnBrePo [2, 14] = 0;
+				Border.UnBrePo [3, 14] = 0;
                     BorisDone = false;
                     SpawnSpecial.WallisDone = true;
                 }

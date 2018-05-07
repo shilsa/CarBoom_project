@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -8,6 +6,7 @@ using System.Collections.Generic;
 using Assets.Script.Gameplay.AI;
 namespace Assets.Script.Gameplay.AI
 {
+
     public class AIMOVE : MonoBehaviour
     {
 
@@ -24,11 +23,12 @@ namespace Assets.Script.Gameplay.AI
         Combine target;
         public Transform targ;
         private System.Random ran;
+		public static bool DoneWall = false;
 
         private void OnCollisionEnter(Collision col)
         {
             if (col.gameObject.name == "Car") {
-                EndGame end;
+				EndGame end = new EndGame();
             }
         }
 
@@ -89,16 +89,20 @@ namespace Assets.Script.Gameplay.AI
                 az = 0;
             bfs();
       //      Debug.Log("distance " + distance[target.getA(), target.getB()]);
-            if (distance[target.getA(), target.getB()] <= 100)
+            if (distance[target.getA(), target.getB()] <= 7)
             {
-                attackMove();
-            //    Debug.Log("Attack");
+				if (DoneWall && Fallingeffect.DoneFalling && CameraMovementControl.InPos) {
+					attackMove ();
+					Debug.Log ("Attack");
+				}
             }
             else
             {
-                randomMove();
-//                Debug.Log("Random");
-            }
+				if (DoneWall && Fallingeffect.DoneFalling && CameraMovementControl.InPos) {
+					randomMove ();
+					Debug.Log ("Random");
+				}
+				}
         }
         void bfs()
         {

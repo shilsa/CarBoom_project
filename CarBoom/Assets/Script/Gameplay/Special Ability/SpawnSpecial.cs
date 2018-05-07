@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Assets.Script.Gameplay.AI;
 public class SpawnSpecial : MonoBehaviour {
 
 	public GameObject Sob;
@@ -28,6 +28,7 @@ public class SpawnSpecial : MonoBehaviour {
 				}
 				if (counter == maxsp) {
 					WallisDone = false;
+					AIMOVE.DoneWall = true;
 					return;
 				}
 			}
