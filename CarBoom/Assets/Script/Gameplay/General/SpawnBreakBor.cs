@@ -14,7 +14,7 @@ public class SpawnBreakBor : MonoBehaviour {
 	int maxbor;
 
 	void Start () {
-        int temp = Random.Range(30, 50);
+        int temp = Random.Range(20, 50);
         maxbor = temp;
 	}
 
@@ -22,7 +22,7 @@ public class SpawnBreakBor : MonoBehaviour {
 		if(BorisDone){
 				int xcor = Random.Range (2, xmax);
 				int zcor = Random.Range (2, zmax);
-				Vector3 borpo = new Vector3 ((float)(xcor *2 +1), 1f, (float)(zcor*2+1));
+				Vector3 borpo = new Vector3 ((float)(xcor *2+1), 1f, (float)(zcor*2+1));
                 if (Border.UnBrePo[xcor, zcor] == 1) ;
                 else if (counter < maxbor)
                 {
@@ -30,6 +30,7 @@ public class SpawnBreakBor : MonoBehaviour {
                     counter++;
                     BrePo[xcor, zcor] = 1;
                     Border.UnBrePo[xcor, zcor] = 1;
+                Debug.Log("Wall is " + xcor + " " + zcor +" is: " +Border.UnBrePo[xcor,zcor]);
                 }
                 else if (counter == maxbor)
                 {

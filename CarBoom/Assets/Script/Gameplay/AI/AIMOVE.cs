@@ -24,18 +24,26 @@ namespace Assets.Script.Gameplay.AI
         Combine target;
         public Transform targ;
         private System.Random ran;
+
+        private void OnCollisionEnter(Collision col)
+        {
+            if (col.gameObject.name == "Car") {
+                EndGame end;
+            }
+        }
+
         void Start()
         {
             s = new Stack<Combine>();
             target = new Combine((int)(targ.localPosition.x + 1) / 2,(int) (targ.localPosition.z + 1) / 2);
             this.MAX = 16;
             map = new int[MAX, MAX];
-            for (int i = 1; i < MAX - 1; i++)
-                for (int j = 1; j < MAX - 1; j++)
-                    if (i % 2 == 0 && j % 2 == 0)
-                        map[i, j] = 1;
-                    else
-                        map[i, j] = 0;
+           // for (int i = 1; i < MAX - 1; i++)
+             //   for (int j = 1; j < MAX - 1; j++)
+               //     if (i % 2 == 0 && j % 2 == 0)
+                 //       map[i, j] = 1;
+                   // else
+                     //   map[i, j] = 0;
 
        
 
@@ -81,10 +89,10 @@ namespace Assets.Script.Gameplay.AI
                 az = 0;
             bfs();
       //      Debug.Log("distance " + distance[target.getA(), target.getB()]);
-            if (distance[target.getA(), target.getB()] <= 5)
+            if (distance[target.getA(), target.getB()] <= 100)
             {
                 attackMove();
-//                Debug.Log("Attack");
+            //    Debug.Log("Attack");
             }
             else
             {

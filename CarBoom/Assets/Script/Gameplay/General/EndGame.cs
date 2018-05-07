@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour {
 
-	// Use this for initialization
+    public EndGame() {
+        Debug.Log("GAME OVER");
+    }
 	void Start () {
 		
 	}
