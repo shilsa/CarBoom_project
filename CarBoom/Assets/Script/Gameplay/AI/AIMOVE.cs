@@ -32,7 +32,10 @@ namespace Assets.Script.Gameplay.AI
             map = new int[MAX, MAX];
             for (int i = 1; i < MAX - 1; i++)
                 for (int j = 1; j < MAX - 1; j++)
-                    map[i, j] = 0;
+                    if (i % 2 == 0 && j % 2 == 0)
+                        map[i, j] = 1;
+                    else
+                        map[i, j] = 0;
 
        
 
@@ -45,18 +48,40 @@ namespace Assets.Script.Gameplay.AI
         void Update()
         {
             ran = new System.Random();
+            map = Border.UnBrePo;
             Vector3 bar = transform.position;
-            target = new Combine((int)(targ.localPosition.x + 1.5) / 2, (int)(targ.localPosition.z + 1.5) / 2);
+            target = new Combine((int)(targ.localPosition.x ) / 2, (int)(targ.localPosition.z ) / 2);
             float hor = Input.GetAxis("Horizontal"), ver = Input.GetAxis("Vertical");
-            ax = (int)(bar.x / 2);
-            az = (int)(bar.z / 2);
+            float m = bar.x + 1;
+            double n = 0;
+            double k = 0;
+            if ((int)((bar.x + n) / 2 - 0.4) == (int)((bar.x + n) / 2 + 0.4))
+                ax = (int)((bar.x + k) / 2);
+            else
+            {
+                az = (int)((bar.z + n) / 2);
+                if (map[(int)((bar.x + n) / 2 - 0.4), az + 1] == 1 || map[(int)((bar.x + n) / 2 - 0.4), az - 1] == 1)
+                    ax = (int)((bar.x + k) / 2 - 0.4);
+                else
+                    ax = (int)((bar.x + k) / 2 + 0.4);
+            }
+            if ((int)((bar.z + n) / 2 - 0.4) == (int)((bar.z + n) / 2 + 0.4))
+                az = (int)((bar.z + k) / 2);
+            else
+            {
+                ax = (int)((bar.x + n) / 2);
+                if (map[(int)((bar.z + n) / 2 - 0.4), ax + 1] == 1 || map[(int)((bar.z + n) / 2 - 0.4), ax - 1] == 1)
+                    az = (int)((bar.z + k) / 2 - 0.4);
+                else
+                    az = (int)((bar.z + k) / 2 + 0.4);
+            }
             if (ax < 0)
                 ax = 0;
             if (az < 0)
                 az = 0;
             bfs();
       //      Debug.Log("distance " + distance[target.getA(), target.getB()]);
-            if (distance[target.getA(), target.getB()] <= 20)
+            if (distance[target.getA(), target.getB()] <= 5)
             {
                 attackMove();
 //                Debug.Log("Attack");
