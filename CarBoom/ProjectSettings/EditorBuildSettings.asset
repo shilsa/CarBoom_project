@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/StarMenu.unity
   - enabled: 1
     path: Assets/CarBoomP.unity
+  - enabled: 1
+    path: Assets/StarMenu - Copy.unity
