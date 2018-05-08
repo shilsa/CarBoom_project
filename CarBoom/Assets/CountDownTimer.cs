@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class CountDownTimer : MonoBehaviour {
 
-	private float secondsLeft = 10f;
-	public static bool timeout = false;
+	private float secondsLeft = 3f;
 
 	private void OnGUI(){
 		if( secondsLeft > 0)
 			GUILayout.Label("Timeplay remaining: " + (int)secondsLeft     );
 		else{
 			GUILayout.Label("Time Out!");
-			timeout = true;
-			SceneManager.LoadScene (2);
+			EndGame.endGame ();
 		}
 
 	}

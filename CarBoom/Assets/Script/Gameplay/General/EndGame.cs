@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
 
-	public void endGame(){
+
+	public static void endGame(){
 		SceneManager.LoadScene (2);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (CountDownTimer.timeout)
-			endGame ();
 	}
 }
