@@ -21,7 +21,7 @@ public class SpawnSpecial : MonoBehaviour {
 			while (true) {
 				int xcor = Random.Range (2, xmax);
 				int zcor = Random.Range (2, zmax);
-				Vector3 sppo = new Vector3 ((float)(xcor * 2) - 1, 0.5f, (float)(zcor * 2) - 1);
+				Vector3 sppo = new Vector3 ((float)(xcor * 2 + 1), 0.5f, (float)(zcor * 2+1) );
 				if (SpawnBreakBor.BrePo [xcor, zcor] == 1) {
 					Instantiate (Sob, sppo, Spos.rotation);
 					counter++;
